@@ -1,0 +1,14 @@
+.vs/
+
+*.sln
+
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+makefile
+
+Builder/bin/
+Builder/bin-int/
+
+Builder/Vendor/premake/premake/
