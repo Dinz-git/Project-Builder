@@ -730,6 +730,8 @@ int main() {
         "@echo off\n"
         "setlocal\n\n"
 
+        "pushd \"%~dp0\"\n\n"
+
         "echo === Clean operation started ===\n\n"
 
         "set \"PROJECT_DIR=" + InProjectFolder + "\"\n"
@@ -763,6 +765,7 @@ int main() {
         ")\n\n"
 
         "popd\n"
+        "popd\n"
         "popd\n\n"
 
         "echo === Clean operation completed ===\n\n"
@@ -773,6 +776,8 @@ int main() {
     std::string Clean =
         "@echo off\n"
         "setlocal enabledelayedexpansion\n\n"
+
+        "pushd \"%~dp0\"\n\n"
 
         "echo === Clean operation started ===\n\n"
 
@@ -834,6 +839,7 @@ int main() {
 
         "popd\n"
         "popd\n"
+        "popd\n"
         "popd\n\n"
 
         "echo === Clean operation completed ===\n\n"
@@ -844,6 +850,8 @@ int main() {
     std::string SetUpVendor =
         "@echo off\n"
         "setlocal\n\n"
+
+        "pushd \"%~dp0\"\n\n"
 
         "echo === Download operation started ===\n\n"
 
@@ -920,7 +928,8 @@ int main() {
 
         + (ENet ? "popd\n" : "")
         + (ENet ? "popd\n" : "")
-        + "popd\n\n"
+        + "popd\n"
+        "popd\n\n"
 
         "echo === Download operation completed ===\n\n"
 
@@ -930,10 +939,13 @@ int main() {
     std::string MinGW =
         "@echo off\n\n"
 
+        "pushd \"%~dp0\"\n\n"
+
         "pushd ..\\..\n\n"
 
         + InProjectFolder + "\\Vendor\\premake\\premake\\premake5.exe gmake\n\n"
 
+        "popd\n"
         "popd\n\n"
 
         "pause";
@@ -941,10 +953,13 @@ int main() {
     std::string MSVC =
         "@echo off\n\n"
 
+        "pushd \"%~dp0\"\n\n"
+
         "pushd ..\\..\n\n"
 
         + InProjectFolder + "\\Vendor\\premake\\premake\\premake5.exe vs2022\n\n"
 
+        "popd\n"
         "popd\n\n"
 
         "pause";
@@ -1015,7 +1030,7 @@ int main() {
     if (!CreateFile(MainFolder / "premake5.lua", ProjectPremake)) {
         return 1;
     }
-    if (Icon ) {
+    if (Icon) {
         if (!CreateFile(MainFolder / ProjectFolder / "assets" / "icon" / "resource.rc", Resource)) {
             return 1;
         }
