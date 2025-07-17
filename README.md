@@ -1,4 +1,4 @@
-# Project Builder
+![Project Builder](Resources/Project-Builder_Banner.png)
 
 `prj.exe` quickly creates C++ projects with a clean and consistent structure.
 
@@ -22,6 +22,8 @@
 1. Run `prj.exe`
 2. Follow the prompts to configure your project
 3. Run the setup scripts to prepare the project (start with setup vendor)
+
+![Example Usage](Resources/Project-Builder.png)
 
 ## Requirements
 
