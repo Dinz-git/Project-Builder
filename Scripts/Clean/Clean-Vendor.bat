@@ -1,6 +1,8 @@
 @echo off
 setlocal
 
+pushd "%~dp0"
+
 echo === Clean operation started ===
 
 set "PROJECT_DIR=Builder"
@@ -15,6 +17,7 @@ if exist "%PREMAKE_DIR%" (
     echo Removed %PREMAKE_DIR%
 )
 
+popd
 popd
 popd
 

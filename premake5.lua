@@ -5,9 +5,9 @@ workspace "Builder"
 
     filter {"toolset:msc*"}
         buildoptions {
-           "/EHsc",
-           "/Zc:preprocessor",
-           "/Zc:__cplusplus"
+            "/EHsc",
+            "/Zc:preprocessor",
+            "/Zc:__cplusplus"
         }
 
     filter {"toolset:gcc or toolset:clang"}

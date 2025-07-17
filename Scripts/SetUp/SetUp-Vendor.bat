@@ -1,12 +1,14 @@
 @echo off
 setlocal
 
+pushd "%~dp0"
+
 echo === Download operation started ===
 
 set "PROJECT_DIR=Builder"
 set "VENDOR_DIR=Vendor"
 set "PREMAKE_DIR=premake"
-set "PREMAKE_TAG=5.0.0-beta6"
+set "PREMAKE_TAG=5.0.0-beta7"
 
 curl --version >nul 2>&1 || (
     echo Error: curl is not installed.
@@ -33,6 +35,7 @@ curl -L -o premake-windows.zip "https://github.com/premake/premake-core/releases
 tar -xf premake-windows.zip
 del premake-windows.zip
 
+popd
 popd
 popd
 popd

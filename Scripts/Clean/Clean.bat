@@ -1,6 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
+pushd "%~dp0"
+
 echo === Clean operation started ===
 
 set "MAIN_DIR=Project-Builder"
@@ -35,6 +37,7 @@ pushd "%EXECUTABLE_DIR%"
 echo Cleaning %EXECUTABLE_DIR%...
 del /F /Q *.vcxproj *.vcxproj.filters *.user Makefile 2>nul
 
+popd
 popd
 popd
 popd
