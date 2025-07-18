@@ -338,6 +338,9 @@ int main() {
         "        defines {\"WINDOWS_\"}\n"
         "        systemversion \"latest\"\n\n"
 
+        "        filter {\"toolset:msc*\"}\n"
+        "            buildoptions {\"/wd5287\"}\n\n"
+
         "        filter {\"configurations:Debug\"}\n"
         "            defines {\"DEBUG_\"}\n"
         "            runtime \"Debug\"\n"
